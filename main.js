@@ -26,22 +26,22 @@ function generateParagraph(count = 100) {
     for (let i = 1; i <= count; i++) {
         paragraph.push(text[Math.floor(Math.random() * text.length)].toLowerCase());
     }
-    // Capitalize the first letter in the first word in every paragraph;
+    
     let fl=paragraph[0];
     paragraph[0] = fl.replace(fl[0], fl[0].toUpperCase());
-    // Add a full-stop to the last word in the paragraph.
+    
     let lwPos=paragraph.length - 1;
     let lWord = paragraph[lwPos];
     paragraph[lwPos] = lWord.replace(lWord, lWord + ".");
-    // Add punctuations;
+   
     paragraph.forEach((word, index) => {
-        // Check if the index is not zero and divisible by 10.
+       
         if (index > 0 && index % 10 === 0) {
             let randomNum = Math.floor(Math.random() * 4);
             let pos=index + randomNum;
             let randWord=paragraph[pos];
             paragraph[pos] = randWord.replace(randWord, randWord + generateRandomPunctuation());
-            // Capitalize the first letter of the next word if the punctuation mark that comes before it is not ","
+            
             let nWord=paragraph[pos + 1];
             if (lastChar !== ",") paragraph[pos + 1] = nWord.replace(nWord[0], nWord[0].toUpperCase());
         }
