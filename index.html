@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lorem Ipsum Generator</title>
+  </head>
+  <body>
+    <h1>Lorem Ipsum Generator</h1>
+    <div id="app">
+      <div class="controls">
+        <form>
+          <div class="control">
+            <label for="w-count">Words per paragraph</label>
+            <div>
+              <input type="range" id="w-count" min="10" max="100" value="25" step="10">
+              <span id="w-count-label">25</span>
+            </div>
+          </div>
+          <div class="control"> 
+            <label for="p-count">Paragraph count</label>
+            <div>
+              <input type="range" id="p-count" min="1" max="20" step="1" value="3">
+              <span id="p-count-label">3</span>
+            </div>
+          </div>
+          <button type="submit">Generate</button>
+        </form>
+        <button class="copy">Copy to Clipboard</button>
+        <div class="info">
+          Use the sliders to set the parameters, then hit the "Generate" button.
+          
+          You can copy the text by hitting the "Copy to Clipboard" button
+        </div>
+      </div>
+      <div class="output"></div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
